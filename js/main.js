@@ -150,24 +150,40 @@
 
 	// scroll
 	var scrollWindow = function() {
+		var navBar = document.getElementById("ftco-navbar");
+		// var navBarCollapse = document.getElementById("ftco-nav");
 		$(window).scroll(function(){
 			var $w = $(this),
 					st = $w.scrollTop(),
 					navbar = $('.ftco_navbar'),
+					navBarCollapse = $('#ftco-nav'),
 					sd = $('.js-scroll-wrap');
 
 			if (st > 150) {
 				if ( !navbar.hasClass('scrolled') ) {
-					navbar.addClass('scrolled');	
+					if(navBarCollapse.hasClass('show')){
+						navBarCollapse.removeClass('show')
+					}
+					navbar.addClass('scrolled');
+					navBar.style.background='white'	
+
 				}
 			} 
 			if (st < 150) {
 				if ( navbar.hasClass('scrolled') ) {
+					if(navBarCollapse.hasClass('show')){
+						navBarCollapse.removeClass('show')
+					}
+					navBar.style.background='#ffffff00'
 					navbar.removeClass('scrolled sleep');
+						
 				}
 			} 
 			if ( st > 350 ) {
 				if ( !navbar.hasClass('awake') ) {
+					if(navBarCollapse.hasClass('show')){
+						navBarCollapse.removeClass('show')
+					}
 					navbar.addClass('awake');	
 				}
 				
@@ -177,11 +193,15 @@
 			}
 			if ( st < 350 ) {
 				if ( navbar.hasClass('awake') ) {
+					if(navBarCollapse.hasClass('show')){
+						navBarCollapse.removeClass('show')
+					}
 					navbar.removeClass('awake');
 					navbar.addClass('sleep');
 				}
 				if(sd.length > 0) {
 					sd.removeClass('sleep');
+					
 				}
 			}
 		});
