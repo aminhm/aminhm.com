@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>AminHM - Welcome</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="css/animate.css">
+	
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://smtpjs.com/v3/smtp.js">
+	</script>
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	<script>
+		const validateEmail = (email) => {
+		return String(email)
+			.toLowerCase()
+			.match(
+			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+			);
+		};
+		function sendEmail(){
+			var nameValue = document.getElementById("message-name").value;
+			var emailValue = document.getElementById("message-email").value;
+			var subjectValue = document.getElementById("message-subject").value;
+			var messageValue = document.getElementById("message-body").value;
+			var snackbar = document.getElementById("snackbar");
+			snackbar.style.backgroundColor = 'red'
+			if(nameValue==''){
+				snackbar.innerHTML = 'Name is blank'
+			}
+			else if(emailValue==''){
+				snackbar.innerHTML = 'Email is blank'
+			}
+			else if(subjectValue==''){
+				snackbar.innerHTML = 'Subject is blank'
+			}
+			else if(messageValue==''){
+				snackbar.innerHTML = 'Message is blank'
+			}
+			else if(emailValue !='' && !validateEmail(emailValue)){
+				snackbar.innerHTML = 'Email is not valid'
+			}
+			else{
+			Email.send({
+				Host : "smtp.elasticemail.com",
+				Username : "iqson.amin@gmail.com",
+				Password : "ACF4F6CF34128D76AF4048E796FBB8003F92",
+				To : 'iqson.amin@gmail.com',
+				From : 'iqson.amin@gmail.com',
+				Subject : 'hiring website',
+				Body : 'name : '+nameValue+'\n'+'email : '+emailValue+'\n'+'subject : '+subjectValue+'\n'+'message : '+ messageValue
+			}).then(
+			message => {
+				if(message=='OK'){
+					snackbar.style.backgroundColor = '#dda98c'
+				snackbar.innerHTML = 'Your message sent successfully'
+				}
+			else{
+				snackbar.innerHTML = 'Network error'
+				
+			}})}
+			setTimeout(() => {
+				snackbar.className = "show";
+			setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+}, "1000");
+			
+			
+		
+		
+
+			
+
+
+			
+		}
+	</script>
+	
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+		<div class="container">
+			<!-- <a class="navbar-brand" href="index.html">AminH<span>.</span></a> -->
+			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav nav ml-auto">
+					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+					<li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
+					<li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
+					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Experiences</span></a></li>
+					<!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
+					<li class="nav-item"><a href="#educations-section" class="nav-link"><span>Educations</span></a></li>
+					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<section id="home-section" class="hero">
+		<div class="home-slider owl-carousel">
+			<div class="slider-item">
+				<div class="overlay"></div>
+				<div class="container-fluid px-md-0">
+					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+						<div class="one-third order-md-last img" style="background-image:url(images/bg_1.png);">
+							<div class="overlay"></div>
+							<div class="overlay-1"></div>
+						</div>
+						<div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+							<div class="text">
+								<span class="subheading">Hello! This is Amin</span>
+								<h1 class="mb-4 mt-3">Full Stack <span> Alchemist</span> Transforming <span>Ideas</span> into Web <span>Realities</span></h1>
+								<p><a href="#contact-section" class="btn btn-primary">Hire me</a> <a href="./images/about-1.jpg" class="btn btn-primary btn-outline-primary">Download CV</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- <div class="slider-item">
+				<div class="overlay"></div>
+				<div class="container-fluid px-md-0">
+					<div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+						<div class="one-third order-md-last img" style="background-image:url(images/bg_2.jpg);">
+							<div class="overlay"></div>
+							<div class="overlay-1"></div>
+						</div>
+						<div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+							<div class="text">
+								<span class="subheading">We Design &amp; Build Brands</span>
+								<h1 class="mb-4 mt-3">Hi, I am <span>Clyde</span> This is my favorite work.</h1>
+								<p><a href="#" class="btn btn-primary">Hire me</a> <a href="#" class="btn btn-primary btn-outline-primary">Download CV</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</section>
+
+	<section class="ftco-counter img bg-light" id="section-counter">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 justify-content-center counter-wrap ftco-animate">
+					<div class="block-18 d-flex">
+						<div class="icon d-flex justify-content-center align-items-center">
+							<span><img width="40" height="40" src="./images/project.png" alt=""></span>
+						</div>
+						<div class="text">
+							<strong class="number" data-number="9">0</strong>
+							<span>outdoor Project Complete</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 justify-content-center counter-wrap ftco-animate">
+					<div class="block-18 d-flex">
+						<div class="icon d-flex justify-content-center align-items-center">
+							<span><img width="40" height="40" src="./images/mortarboard.png" alt=""></span>
+						</div>
+						<div class="text">
+							<strong class="number" data-number="17">0</strong>
+							<span>academic Project Complete</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 justify-content-center counter-wrap ftco-animate">
+					<div class="block-18 d-flex">
+						<div class="icon d-flex justify-content-center align-items-center">
+							<span class="flaticon-suitcase"></span>
+						</div>
+						<div class="text">
+							<strong class="number" data-number="5">0</strong>
+							<span>companies working</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 justify-content-center counter-wrap ftco-animate">
+					<div class="block-18 d-flex">
+						<div class="icon d-flex justify-content-center align-items-center">
+							<span><img width="50" height="50" src="./images/calendar.png" alt="" style="padding-bottom: 5px;"></span>
+						</div>
+						<div class="text">
+							<strong class="number" data-number="4">0</strong>
+							<span>Years experienced</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-about ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+		<div class="container">
+			<div class="row d-flex no-gutters">
+				<div class="col-md-6 col-lg-5 d-flex">
+					<div class="img-about img d-flex align-items-stretch">
+						<div class="overlay"></div>
+						<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/bg_1.png);">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-7 pl-md-4 pl-lg-5 py-5">
+					<div class="py-md-5">
+						<div class="row justify-content-start pb-3">
+							<div class="col-md-12 heading-section ftco-animate">
+								<span class="subheading">My Intro</span>
+								<h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">About Me</h2>
+								<p>With nearly three years of front-end experience (Angular, Flutter, JavaScript) and almost a year in back-end development (Django), I'm dedicated to programming. It's not just my profession; it's a wellspring of inspiration and creativity that shapes my career and mindset.
+
+									My commitment and patience extend beyond work, underpinning personal and professional growth.</p>
+
+								<ul class="about-info mt-4 px-md-0 px-2">
+									<li class="d-flex"><span>Name:</span> <span>Amin HM</span></li>
+									<li class="d-flex"><span>Date of birth:</span> <span>February 09, 1999</span></li>
+									<li class="d-flex"><span>Address:</span> <span>Leirikatu 2 B 9, Lappeenranta, Finland</span></li>
+									<li class="d-flex"><span>Zip code:</span> <span>53600</span></li>
+									<li class="d-flex"><span>Email:</span> <a style="font-weight:600" href="mailto:iqson.amin@gmail.com">iqson.amin@gmail.com</a></li>
+									<li class="d-flex"><span>Phone: </span> <a style="font-weight:600" href="tel://+358417257439">+358-417257439</a></li>
+								</ul>
+							</div>
+							<div class="col-md-12">
+								<div class="my-interest d-lg-flex w-100">
+									<div class="interest-wrap d-flex align-items-center">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="flaticon-listening"></span>
+										</div>
+										<div class="text">Music</div>
+									</div>
+									<div class="interest-wrap d-flex align-items-center">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="flaticon-suitcases"></span>
+										</div>
+										<div class="text">Travel</div>
+									</div>
+									<div class="interest-wrap d-flex align-items-center">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="flaticon-video-player"></span>
+										</div>
+										<div class="text">Movie</div>
+									</div>
+									<div class="interest-wrap d-flex align-items-center">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="flaticon-football"></span>
+										</div>
+										<div class="text">Sports</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="height: 55px;"></div>
+						<p><a href="#contact-section" class="btn btn-primary">Hire me</a> <a href="#" class="btn btn-primary btn-outline-primary">Download CV</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="ftco-section bg-light" id="skills-section">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<span class="subheading">Skills</span>
+					<h2 class="mb-4">My Skills</h2>
+					<p>Skills that Drive Success</p>
+				</div>
+			</div>
+			<div class="row progress-circle mb-5">
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">Python</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='95'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">95<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">Dart</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='90'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">90<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">Flutter</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='90'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">90<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+				
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">TypeScript</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='80'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+				
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">Java Script</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='80'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">HTML5 / CSS</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='80'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">Angular</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='85'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">85<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">Wordpress</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='85'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">85<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">UI/UX</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='80'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">Django</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='75'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">MySQL</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='75'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">Git</h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='70'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">70<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+						
+						<!-- END -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<p style="text-align-last: center;"><a href="#contact-section" class="btn btn-primary">Hire me</a> <a href="#" class="btn btn-primary btn-outline-primary">Download CV</a></p>
+	</section>
+
+	<section class="ftco-section" id="services-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12 heading-section text-center ftco-animate mb-5">
+					<span class="subheading">I am grat at</span>
+					<h2 class="mb-4">I do awesome services for my clients</h2>
+					<p>Exceeding Expectations, One Client at a Time</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 col-lg-3">
+					<div class="media block-6 services d-block bg-white rounded-lg shadow ftco-animate">
+						<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-3d-design"></span></div>
+						<div class="media-body">
+							<h3 class="heading mb-3">Web Design</h3>
+							<p>With a keen eye for aesthetics and a deep understanding of user experience principles, I bring websites to life that not only look great but also provide seamless navigation and engagement for visitors. </p>
+						</div>
+					</div> 
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="media block-6 services d-block bg-white rounded-lg shadow ftco-animate">
+						<div class="icon shadow d-flex align-items-center justify-content-center"><span class="flaticon-app-development"></span></div>
+						<div class="media-body">
+							<h3 class="heading mb-3">Web Application</h3>
+							<p>I excel in developing dynamic and interactive web applications. Leveraging my expertise in front-end and back-end technologies, I create robust and efficient web solutions that cater to diverse user needs.</p>
+						</div>
+					</div> 
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="media block-6 services d-block bg-white rounded-lg shadow ftco-animate">
+						<div class="icon shadow d-flex align-items-center justify-content-center"><span class="flaticon-web-programming"></span></div>
+						<div class="media-body">
+							<h3 class="heading mb-3">Web Development</h3>
+							<p>I am skilled in the art of web development, proficiently working with both front-end and back-end technologies. With a passion for clean code and user-centric design, I transform ideas into functional and visually appealing websites</p>
+						</div>
+					</div> 
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="media block-6 services d-block bg-white rounded-lg shadow ftco-animate">
+						<div class="icon shadow d-flex align-items-center justify-content-center"><img class="heart-icon" width="50" height="50"></div>
+						<div class="media-body">
+							<h3 class="heading mb-3">Mobile Application</h3>
+							<p>I possess a strong proficiency in mobile application development, specializing in both Android and iOS platforms. Leveraging my skills in app design, coding, and optimization, I create intuitive and engaging mobile solutions.</p>
+						</div>
+					</div> 
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 col-lg-3">
+					<div class="media block-6 services d-block bg-white rounded-lg shadow ftco-animate">
+						<div class="icon shadow d-flex align-items-center justify-content-center"><span class="flaticon-computer"></span></div>
+						<div class="media-body">
+							<h3 class="heading mb-3">UI/UX</h3>
+							<p>I specialize in creating exceptional user experiences through intuitive and visually appealing interfaces. With a focus on user-centered design principles, I craft digital products that seamlessly blend aesthetics with functionality.</p>
+						</div>
+					</div> 
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="media block-6 services d-block bg-white rounded-lg shadow ftco-animate">
+						<div class="icon shadow d-flex align-items-center justify-content-center"><span class="flaticon-vector"></span></div>
+						<div class="media-body">
+							<h3 class="heading mb-3">Software Design</h3>
+							<p>With a keen eye for detail and a deep understanding of design principles, I specialize in creating software architectures that are not only functional but also scalable and maintainable.</p>
+						</div>
+					</div> 
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="media block-6 services d-block bg-white rounded-lg shadow ftco-animate">
+						<div class="icon shadow d-flex align-items-center justify-content-center"><img class="sd-icon" style="width:50px;height:50px;"></img></div>
+						<div class="media-body">
+							<h3 class="heading mb-3">Software Development</h3>
+							<p>With hands-on experience in coding, testing, and deployment, I bring ideas to life through clean and efficient code. My passion lies in building robust and user-friendly software solutions that address real-world challenges.</p>
+						</div>
+					</div> 
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="media block-6 services d-block bg-white rounded-lg shadow ftco-animate">
+						<div class="icon shadow d-flex align-items-center justify-content-center"><img class="maintenance-icon" style="width:50px;height:50px;"></img></div>
+						<div class="media-body">
+							<h3 class="heading mb-3">Maintenance</h3>
+							<p>I excel in the art of keeping software systems running smoothly. With a keen eye for identifying and resolving issues, I ensure that software remains reliable, secure, and up-to-date.</p>
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-hireme">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-md-8 col-lg-8 d-flex align-items-center">
+					<div class="w-100 py-4">
+						<h2>Have a project on your mind.</h2>
+						<p>Choose me for your web application project. I'm dedicated, experienced, and passionate about crafting outstanding solutions tailored to your needs. Let's create digital excellence together.</p>
+						<p class="mb-0"><a href="#contact-section" class="btn btn-white py-3 px-4">Contact me</a></p>
+					</div>
+				</div>
+				<div class="col-md-4 col-lg-4 d-flex align-items-end">
+					<img src="images/author.png" class="img-fluid" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-project" id="projects-section">
+		<div class="container-fluid px-md-4">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<span class="subheading">experiences</span>
+					<h2 class="mb-4">My Experiences</h2>
+					<p>Explore my professional journey, where I've honed my skills, tackled exciting projects, and embraced diverse challenges. These experiences have not only shaped my career but also enriched my passion for innovation and technology. Discover the milestones that have contributed to my growth as a versatile and dedicated professional.</p>
+				</div>
+			</div>
+			<div class="row">
+    			<div class="col-md-6">
+    				<div class="resume-wrap ftco-animate fadeInUp ftco-animated">
+    					<span class="date">Jul 2022 - Aug 2023</span>
+    					<h2>Full Stack Developer</h2>
+						<span class="position">Bahar Afagh Shargh · Freelance</span>
+						<br>
+    					<span class="position">Tehran, Iran · Remote</span>
+    					<p class="mt-4">I led a project to make traditional trash trucks smarter, tracking stop times, trash weight, and routes. As the software team leader, I handled Django and Flutter development, designed databases, and configured servers for smooth operations. I also developed a Python TCP socket for real-time hardware communication. We optimized the Flutter app using GetX state management. This project showcases my expertise in software development, data management, and hardware integration, reflecting my dedication to innovation.</p>
+						<p class="position"><span style="font-size: 12px;color: black;"> Skills :</span> <span style="color : #dda98b">Back-End Development</span> · <span style="color : #dda98b">Flutter</span> · <span style="color : #dda98b">GetX</span> · <span style="color : #dda98b">Python</span>  · <span style="color : #dda98b">Front-End Development</span> · <span style="color : #dda98b">Software Development</span> · <span style="color : #dda98b">Dart</span> · <span style="color : #dda98b">Linux</span> · <span style="color : #dda98b">Socket Programming</span>
+							 · <span style="color : #dda98b">Nginx</span> · <span style="color : #dda98b">Django</span> · <span style="color : #dda98b">UI/UX</span> · <span style="color : #dda98b">Database Design</span> </p>
+    				</div>
+    				<div class="resume-wrap ftco-animate fadeInUp ftco-animated">
+    					<span class="date">Apr 2021 - Aug 2021</span>
+    					<h2>Flutter Developer</h2>
+    					<span class="position">Yadak Pro · Freelance</span>
+						<br>
+						<span class="position">Tehran, Iran · Hybrid</span>
+    					<p class="mt-4">I led the development of a specialized e-commerce app for bulk car part buyers as a Flutter developer. My responsibilities included creating a user-friendly interface with advanced filtering and search features, implementing seamless order submissions with real-time SMS notifications, and dabbling in backend development using PHP. These experiences have expanded my skill set and strengthened my commitment to user-centric digital solutions.</p>
+						<p class="position"><span style="font-size: 12px;color: black;"> Skills :</span> <span style="color : #dda98b">Flutter</span> · <span style="color : #dda98b">Dart</span> · <span style="color : #dda98b">Front-End Development</span>  · <span style="color : #dda98b">Back-End Development</span> · <span style="color : #dda98b">Software Development</span> · <span style="color : #dda98b">Algorithms</span>
+    				</div>
+    				<div class="resume-wrap ftco-animate">
+    					<span class="date">Jan 2020 - Feb 2021</span>
+    					<h2>Wordpress Developer</h2>
+    					<span class="position">Yadak Pro · Freelance</span>
+						<br>
+						<span class="position">Tehran, Iran · Hybrid</span>
+    					<p class="mt-4">I undertook an engaging project focused on crafting an e-commerce app tailored for selling car parts. Using the versatile platform of WordPress, we established a user-friendly marketplace that catered to car enthusiasts and buyers. This endeavor allowed me to contribute to the thriving world of e-commerce while refining my skills in WordPress development.</p>
+						<p class="position"><span style="font-size: 12px;color: black;"> Skills :</span> <span style="color : #dda98b">WordPress</span> · <span style="color : #dda98b">Front-End Development</span> · <span style="color : #dda98b">User Interface Design</span>  · <span style="color : #dda98b">Software Development</span>
+    				</div>
+    			</div>
+
+    			<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+    					<span class="date">Apr 2022 - Mar 2023</span>
+    					<h2>Full Stack Developer</h2>
+						<span class="position">Medis Holding · Full-time</span>
+						<br>
+    					<span class="position">Shiraz County, Fars, Iran · On-site</span>
+    					<p class="mt-4">With a strong foundation in Django, Flutter, and Angular development, my primary focus has been on Angular. I've successfully delivered projects like <a href="https://charaneh.com">Charaneh</a> , showcasing my expertise in creating dynamic web applications. Additionally, I've contributed to projects involving HTML, CSS, and JavaScript, as seen in <a href="https://painverse.org">Painverse</a>. My career has been marked by versatility and a passion for crafting engaging online experiences.</p>
+						<p class="position"><span style="font-size: 12px;color: black;"> Skills :</span> <span style="color : #dda98b">Back-End Development</span> · <span style="color : #dda98b">Flutter</span> · <span style="color : #dda98b">Python</span>  · <span style="color : #dda98b">Front-End Development</span> · <span style="color : #dda98b">Software Development</span> · <span style="color : #dda98b">Dart</span> 
+							 · <span style="color : #dda98b">Django</span></p>
+    				</div>
+    				
+    				<div class="resume-wrap ftco-animate">
+    					<span class="date">Mar 2021 - Aug 2021 </span>
+    					<h2>Flutter Developer</h2>
+    					<span class="position">Artin Analysis LTD · Freelance</span>
+						<br>
+						<span class="position">Shiraz County, Fars Province, Iran · Hybrid</span>
+    					<p class="mt-4">I worked as a Flutter developer on the international app "Rapidrops," serving both couriers and passengers. Passengers could request courier services, and couriers had the option to accept or decline requests. My focus was on improving the passenger experience. We embraced agile methodologies for responsive development and used Bloc state management for app optimization. This experience deepened my proficiency in app development and project management techniques.</p>
+						<p class="position"><span style="font-size: 12px;color: black;"> Skills :</span> <span style="color : #dda98b">Flutter</span> · <span style="color : #dda98b">Bloc</span> · <span style="color : #dda98b">Dart</span> · <span style="color : #dda98b">Front-End Development</span>  · <span style="color : #dda98b">Agile Methodologies</span> · <span style="color : #dda98b">Software Development</span>
+    				</div>
+    				<!-- <div class="resume-wrap ftco-animate">
+    					<span class="date">2017-2018</span>
+    					<h2>UI/UX Designer</h2>
+    					<span class="position">Cambridge University</span>
+    					<p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+    				</div> -->
+    			</div>
+    		</div>
+		</div>
+		<div style="height: 55px"></div>
+		<p style="text-align-last: center;"><a href="#contact-section" class="btn btn-primary">Hire me</a> <a href="#" class="btn btn-primary btn-outline-primary">Download CV</a></p>
+	</section>
+
+	<section class="ftco-section ftco-project" id="educations-section">
+		<div class="container-fluid px-md-4">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<span class="subheading">Educations</span>
+					<h2 class="mb-4">My Educations</h2>
+					<p>I hold a bachelor's degree in Computer Engineering and a master's degree in Software Engineering. These qualifications have laid the solid foundation for my career in full-stack development, equipping me with the expertise to excel in this dynamic field.</p>
+				</div>
+			</div>
+			<div class="row">
+    			<div class="col-md-6">
+    				<div class="resume-wrap ftco-animate fadeInUp ftco-animated" style="height: auto !important;background-color: rgb(43 0 0);border-color: #ffc49a;">
+    					<span class="date" style="color: #ffc49a;">Sep 2017 - Sep 2022</span>
+    					<h2 style="color: white;">Computer Engineering</h2>
+						<span class="position" style="color: #fff1df">Bachelor's degree</span>
+						<br>
+						<span class="position" style="color: #fff1df">Shiraz, Iran</span>
+    					<p class="mt-4" style="color: #c1c1c1;">My Bachelor's degree in Computer Engineering provided me with a comprehensive understanding of hardware and software systems. This foundational education equipped me with the skills to delve into the intricate world of technology, paving the way for my journey as a full-stack developer.</p>
+    				</div>
+    			</div>
+
+    			<div class="col-md-6">
+    				<div class="resume-wrap ftco-animate fadeInUp ftco-animated" style="height: auto !important;background-color: rgb(43 0 0);border-color: #ffc49a;">
+    					<span class="date" style="color: #ffc49a;">Aug 2023 - Present</span>
+    					<h2 style="color: white;">Software Engineering</h2>
+						<span class="position" style="color: #fff1df">Master's degree</span>
+						<br>
+						<span class="position" style="color: #fff1df">Lappeenranta, Finland</span>
+    					<p class="mt-4" style="color: #c1c1c1;">My Master's degree in Software Engineering deepened my knowledge of software development methodologies, architecture, and design principles. This advanced education has been instrumental in shaping my career as a full-stack developer, enabling me to tackle complex projects innovatively.</p>
+    				</div>
+    			</div>
+    		</div>
+		</div>
+	</section>
+
+	<!-- <section class="ftco-section testimony-section bg-primary">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-12 heading-section heading-section-white text-center ftco-animate">
+					<span class="subheading">Testimonies</span>
+					<h2 class="mb-4">What client says about?</h2>
+					<p>Explore what my clients have to say about their experiences and the solutions I've delivered. <br> Their feedback reflects the quality and commitment I bring to every project.</p>
+				</div>
+			</div>
+			<div class="row ftco-animate">
+				<div class="col-md-12">
+					<div class="carousel-testimony owl-carousel">
+						<div class="item">
+							<div class="testimony-wrap py-4">
+								<div class="text">
+									<span class="fa fa-quote-left"></span>
+									<p class="mb-4 pl-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<div class="d-flex align-items-center">
+										<div class="user-img" style="background-image: url(images/person_1.jpeg)"></div>
+										<div class="pl-3">
+											<p class="name">Behnam Rahnama</p>
+											<span class="position">CEO & Founder of Medis Holding</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony-wrap py-4">
+								<div class="text">
+									<span class="fa fa-quote-left"></span>
+									<p class="mb-4 pl-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<div class="d-flex align-items-center">
+										<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+										<div class="pl-3">
+											<p class="name">Mahdi Jafari</p>
+											<span class="position">CEO of Bahar Afagh Shargh</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+
+
+	<!-- <section class="ftco-section bg-light" id="blog-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<span class="subheading">Blog</span>
+					<h2 class="mb-4">Our Blog</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+				</div>
+			</div>
+			<div class="row d-flex">
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<div class="d-flex align-items-center mb-3 meta">
+								<p class="mb-0">
+									<span class="mr-2">July 03, 2020</span>
+									<a href="#" class="mr-2">Admin</a>
+									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+								</p>
+							</div>
+							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
+							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<div class="d-flex align-items-center mb-3 meta">
+								<p class="mb-0">
+									<span class="mr-2">July 03, 2020</span>
+									<a href="#" class="mr-2">Admin</a>
+									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+								</p>
+							</div>
+							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
+							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
+						<a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<div class="d-flex align-items-center mb-3 meta">
+								<p class="mb-0">
+									<span class="mr-2">July 03, 2020</span>
+									<a href="#" class="mr-2">Admin</a>
+									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+								</p>
+							</div>
+							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
+							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+
+	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<span class="subheading">Contact me</span>
+					<h2 class="mb-4">Have a Project?</h2>
+					<p>Ready to bring your ideas to life or need assistance with a project? Let's connect and discuss how I can help you achieve your goals. Feel free to reach out, and I'll be happy to collaborate with you on your next endeavor.</p>
+				</div>
+			</div>
+
+			<div class="row block-9">
+				<div class="col-md-8">
+					<form action="#" class="bg-light p-4 p-md-5 contact-form">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input id="message-name" type="text" class="form-control" placeholder="Your Name">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input id="message-email" type="text" class="form-control" placeholder="Your Email">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input id="message-subject" type="text" class="form-control" placeholder="Subject">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<textarea name="" id="message-body" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input onclick="sendEmail()" value="Send Message" class="btn btn-primary py-3 px-5">
+								</div>
+							</div>
+						</div>
+					</form>
+					
+				</div>
+
+				<div class="col-md-4 d-flex pl-md-5">
+					<div class="row">
+						<div class="dbox w-100 d-flex">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="fa fa-map-marker"></span>
+							</div>
+							<div class="text">
+								<p><span>Address:</span> Leirikatu 2 B 9,53600, Lappeenranta, Finland</p>
+							</div>
+						</div>
+						<div class="dbox w-100 d-flex">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="fa fa-phone"></span>
+							</div>
+							<div class="text">
+								<p><span>Phone:</span> <a href="tel://+358417257439">+358-417257439</a></p>
+							</div>
+						</div>
+						<div class="dbox w-100 d-flex">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="fa fa-paper-plane"></span>
+							</div>
+							<div class="text">
+								<p><span>Email:</span> <a href="mailto:iqson.amin@gmail.com">iqson.amin@gmail.com</a></p>
+							</div>
+						</div>
+						<div class="dbox w-100 d-flex">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="fa fa-globe"></span>
+							</div>
+							<div class="text">
+								<p><span>Website</span> <a href="#">#</a></p>
+							</div>
+						</div>
+					</div>
+					<!-- <div id="map" class="map"></div> -->
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+	<footer class="ftco-footer ftco-section">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Lets talk about</h2>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<p><a href="#" class="btn btn-primary">Learn more</a></p>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4 ml-md-4">
+						<h2 class="ftco-heading-2">Links</h2>
+						<ul class="list-unstyled">
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Services</h2>
+						<ul class="list-unstyled">
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Web Design</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Web Development</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Business Strategy</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Data Analysis</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Graphic Design</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Have a Questions?</h2>
+						<div class="block-23 mb-3">
+							<ul>
+								<li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+								<li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+								<li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
+							</ul>
+						</div>
+						<ul class="ftco-footer-social list-unstyled mt-2">
+							<li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			</div>
+		</footer>
+		
+		
+
+		<!-- loader -->
+		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
+		<script src="js/jquery.stellar.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/jquery.animateNumber.min.js"></script>
+		<script src="js/scrollax.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+		<script src="js/google-map.js"></script>
+		
+		<script src="js/main.js"></script>
+
+
+		<div id="snackbar"></div>
+		
+	</body>
+	</html>
