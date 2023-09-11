@@ -8808,13 +8808,13 @@ h1, h2, h3, h4, h5,
     list-style: none;
     margin-bottom: 10px; }
     .ftco-about ul.about-info li span {
-      width: calc(100% - 130px);
+      width: 60%;
       font-weight: 600;
       color: #dda98c; }
       .ftco-about ul.about-info li span:first-child {
         font-weight: 600;
         color: #000000;
-        width: 130px; }
+        width: 40%; }
 
 .ftco-about .my-interest {
   margin-top: 30px; }
